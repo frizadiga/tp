@@ -1,0 +1,16 @@
+.app {
+  display: grid;
+  background-color: white;
+  color: #333;
+  min-height: 100vh;
+  margin: auto;
+  .app__router-view {
+    padding-top: 70px;
+    margin: 0 auto;
+    display: block;
+    max-width: 425px;
+    // @media only screen and (min-width: 768px) {
+      // max-width: 1440px;
+    // }
+  }
+}

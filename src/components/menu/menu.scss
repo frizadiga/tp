@@ -1,0 +1,13 @@
+.menu {
+  width: 100%;
+  max-width: 500px;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .menu__item {
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 18px 22px;
+  }
+}

@@ -1,0 +1,29 @@
+.dialog {
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-content: center;
+  padding: 4px 16px 16px 16px;
+  .inner {
+    // display: flex;
+    // place-content: center;
+    // align-items: center;
+    // justify-content: center;
+    // min-width: 100vw;
+    // min-height: 100vh;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: white;
+    max-width: 480px;
+    // .body {}
+    @media only screen and (min-width: 768px) {
+      padding: 12px 28px 28px 28px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+button {
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 12px 8px;
+  border: none;
+  color: inherit;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
+  &:focus {
+    filter: brightness(0.8);
+  }
+  &.primary {
+    background-color: #333;
+    color: white;
+  }
+  &.outline {
+    border: 1px solid #333;
+    color: #333;
+  }
+  &:disabled {
+    background-color: #e1e1e1!important;
+  }
+}
