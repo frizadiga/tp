@@ -34,9 +34,6 @@ const MainForm = () => {
     <div className="main-form">
       {/* <p className="title"></p> */}
       <form onSubmit={handleSubmit}>
-        {
-          error && <span className="error">{error}</span> 
-        }
         <input
           type="text"
           placeholder="Type Amount Ex: Rp 15.000"
@@ -44,6 +41,9 @@ const MainForm = () => {
           value={inputValue}
           required
         />
+        {
+          error && <span className="error">{error}</span> 
+        }
         <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
           {
