@@ -13,19 +13,21 @@ const MainForm = () => {
     e.preventDefault();
     const validValue = validator(inputValue);
 
-    console.log('debug', { validValue });  
+    // console.log('debug', { validValue });
 
     if (validValue.error) {
       setError(validValue.error);
     } else {
       const result = denominator(validValue.value);
       setResult(result);
+      setInputValue(validValue.value.toLocaleString('id'));
     }
   };
 
   const handleInput = (e) => {
     setError('');
     setInputValue(e.target.value);
+    setResult([]);
   };
 
   return (
