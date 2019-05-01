@@ -20,6 +20,5 @@ export const denominator = (input) => {
     result.left = total;
   }
 
-  console.log('debug', { result, total });
   return result;
 };
