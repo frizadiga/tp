@@ -31,8 +31,8 @@ const MainForm = () => {
         <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
           {
-            !!result.length && result.map(item => (
-              <div>
+            !!result.length && result.map((item, i) => (
+              <div key={i}>
                 <span>{item.count}</span>
                 <span> X </span>
                 <span>{item.amount}</span>

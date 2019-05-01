@@ -1,19 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon as FAS } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon as FAS } from '@fortawesome/react-fontawesome';
 import Button from '../button';
 // import { Link } from 'react-router-dom';
 import './top-bar.scss';
-
-// const menuList = [
-//   {
-//     path: '/',
-//     text: 'Home',
-//   },
-//   {
-//     path: '/menu',
-//     text: 'Menu',
-//   },
-// ];
 
 const TopBar = () => {
   return (
