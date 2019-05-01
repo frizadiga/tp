@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import './main-form.scss';
+import validator from './validator';
 import { denominator } from './formula';
 import Button from '../button';
 
 const MainForm = () => {
   const [result, setResult] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const result = denominator(inputValue);
-    setResult(result);
+    const validValue = validator(inputValue);
+
+    console.log('debug', { validValue });  
+
+    if (validValue.error) {
+      setError(validValue.error);
+    } else {
+      const result = denominator(validValue.value);
+      setResult(result);
+    }
   };
 
   const handleInput = (e) => {
+    setError('');
     setInputValue(e.target.value);
   };
 
@@ -21,6 +32,9 @@ const MainForm = () => {
     <div className="main-form">
       {/* <p className="title"></p> */}
       <form onSubmit={handleSubmit}>
+        {
+          error && <span className="error">{error}</span> 
+        }
         <input
           type="text"
           placeholder="Type Amount Ex: Rp 15.000"
@@ -31,11 +45,11 @@ const MainForm = () => {
         <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
           {
-            !!result.length && result.map(item => (
-              <div>
+            !!result.length && result.map((item, i) => (
+              <div key={i}>
                 <span>{item.count}</span>
                 <span> X </span>
-                <span>{item.amount}</span>
+                <span>Rp {item.amount}</span>
               </div>
             ))
           }
