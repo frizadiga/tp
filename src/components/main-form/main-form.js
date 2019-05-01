@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon as FAS } from '@fortawesome/react-fontawesome';
+
 import './main-form.scss';
 import validator from './validator';
 import { denominator } from './formula';
+
 import Button from '../button';
 
 const MainForm = () => {
   const [result, setResult] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState('');
+
+  const handleReset = () => {
+    setResult([]);
+    setInputValue('');
+    setError('');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,11 +39,11 @@ const MainForm = () => {
 
   return (
     <div className="main-form">
-      {/* <p className="title"></p> */}
       <form onSubmit={handleSubmit}>
         <input
+          className="currency-input"
           type="text"
-          placeholder="Type Amount Ex: Rp 15.000"
+          placeholder="Type Ex: Rp 15.000"
           onChange={handleInput}
           value={inputValue}
           required
@@ -43,33 +52,48 @@ const MainForm = () => {
           error && <span className="error">{error}</span>
         }
         <div className="result">
-          <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
+          <p className="title">Result: </p>
           {
             !!result.length && result.map((item, i) => (
-              <div key={i}>
-                <span>{item.count}</span>
-                <span> x </span>
-                <span>Rp {item.amount}</span>
+              <div key={i} className="item">
+                <span className="count">{item.count}</span>
+                <span className="times"> x </span>
+                <span className="amount">Rp {item.amount}</span>
               </div>
             ))
           }
           {
-            result.left && <span>left Rp {result.left} (no available fraction)</span>
+            result.left
+            && (
+              <span>
+                Left Rp <span className="amount">{result.left}</span> (no available fraction)
+              </span>
+            )
           }
         </div>
-        <Button
-          type="submit"
-          // to=""
-          style={{
-            padding: 16,
-            backgroundColor: '#42b549',
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
-          }}
-        >
-          Calculate
-        </Button>
+        <div className="action-bar">
+          <Button
+            type="submit"
+            // to=""
+            style={{
+              color: '#42b549',
+            }}
+          >
+            <FAS icon="check" />
+            {' '}
+            Calculate
+          </Button>
+          <Button
+            onClick={handleReset}
+            style={{
+              color: '#ff5722',
+            }}
+          >
+            <FAS icon="redo-alt" />
+            {' '}
+            Reset
+          </Button>
+        </div>
       </form>
     </div>
   );
