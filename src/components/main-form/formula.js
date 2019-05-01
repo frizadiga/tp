@@ -11,9 +11,13 @@ export const denominator = (input) => {
         count,
         amount: nominals[i],
       });
-
-      total %= nominals[i];
     }
+
+    total %= nominals[i];
+  }
+
+  if (total > 0) {
+    result.left = total;
   }
 
   return result;

@@ -27,6 +27,7 @@
     "parser": "babel-eslint",
     "globals": {
       "it": true,
+      "describe": true,
       "expect": true,
       "window": true,
       "document": true

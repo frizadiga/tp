@@ -5,7 +5,7 @@
   min-height: 100vh;
   margin: auto;
   .app__router-view {
-    padding-top: 70px;
+    padding-top: calc(70px + 16px);
     margin: 0 auto;
     display: block;
     max-width: 425px;
