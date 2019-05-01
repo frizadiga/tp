@@ -101,4 +101,13 @@ describe('validator() test invalid value', () => {
     };
     expect(result).toEqual(expected);
   });
+
+  it('validator(abc) should return error correctly', () => {
+    const result = validator('abc');
+    const expected = {
+      value: null,
+      error: 'please type number',
+    };
+    expect(result).toEqual(expected);
+  });
 });

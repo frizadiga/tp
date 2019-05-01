@@ -48,7 +48,7 @@ const MainForm = () => {
             !!result.length && result.map((item, i) => (
               <div key={i}>
                 <span>{item.count}</span>
-                <span> X </span>
+                <span> x </span>
                 <span>Rp {item.amount}</span>
               </div>
             ))
