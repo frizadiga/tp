@@ -8,10 +8,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBars,
-  faChevronRight,
-  faChevronDown,
-  faPlus,
-  faTimes,
+  faCheck,
+  faRedoAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 // Components
@@ -24,7 +22,7 @@ const Menu = React.lazy(() => import('../menu'));
 const NotFoundPage = React.lazy(() => import('../not-found-page'));
 const HomePage = React.lazy(() => import('../home-page'));
 
-library.add(faBars, faChevronRight, faChevronDown, faPlus, faTimes);
+library.add(faBars, faCheck, faRedoAlt);
 
 const App = () => {
   return (
