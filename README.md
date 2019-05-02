@@ -10,3 +10,7 @@ then
 ```
 
 the app running on `http://localhost:3000`
+
+---
+
+**Note**: Best view on mobile 📱
